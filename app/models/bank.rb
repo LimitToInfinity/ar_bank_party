@@ -7,7 +7,7 @@ class Bank < ActiveRecord::Base
   end
 
   def account_kinds
-    accounts.pluck(:kind).join(', ')
+    accounts.pluck(:kind).uniq
   end
 
   def self.most_accounts
